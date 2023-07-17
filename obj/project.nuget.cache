@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7zE6VC7wBzMyGtEGVRdsSUFDzl2nFRa9fbVJzKBZRMoIlDFOuJQdWHc3zoTe0TueoFtg51ZSf9KQQv5x7nhIcg==",
+  "dgSpecHash": "PdmUm2aHaGQD8nLw7/qB93QIRTUAZ+Xan2UWWu6QGa7v2ZKzoC93xLThAUYpSAsnM8mWx3HLpIh2gwks4WlB7Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mathe\\OneDrive\\Documentos\\poker_cs\\testcs.csproj",
+  "projectFilePath": "C:\\Users\\mathe\\OneDrive\\Documentos\\poker_cs\\texasholdem_poker_csharp\\testcs.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

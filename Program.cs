@@ -13,6 +13,7 @@
     bool stflush=false;//rank 8
     bool royal=false;//rank 9
     public int rank=0;
+    public int hPair=0;
 
 }
 
@@ -158,74 +159,74 @@ class Program
                 switch (cards[1,dcard])
                 {
                     case 2:
-                    phrase = "Two";
+                    phrase = "2";
                     break;
 
                     case 3:
-                    phrase = "Three";
+                    phrase = "3";
                     break;
 
                     case 4:
-                    phrase = "Four";
+                    phrase = "4";
                     break;
 
                     case 5:
-                    phrase = "Five";
+                    phrase = "5";
                     break;
 
                     case 6:
-                    phrase = "Six";
+                    phrase = "6";
                     break;
 
                     case 7:
-                    phrase = "Seven";
+                    phrase = "7";
                     break;
 
                     case 8:
-                    phrase = "Eight";
+                    phrase = "8";
                     break;
 
                     case 9:
-                    phrase = "Nine";
+                    phrase = "9";
                     break;
 
                     case 10:
-                    phrase = "Ten";
+                    phrase = "T";
                     break;
 
                     case 11:
-                    phrase = "Jack";
+                    phrase = "J";
                     break;
 
                     case 12:
-                    phrase = "Queen";
+                    phrase = "Q";
                     break;
 
                     case 13:
-                    phrase = "King";
+                    phrase = "K";
                     break;
 
                     case 14:
-                    phrase = "Ace";
+                    phrase = "A";
                     break;
                 }
             
                 switch (cards[2,dcard]) 
                 {
                     case 0:
-                    phrase+=" of Clubs";
+                    phrase+=" ♣";
                     break;
 
                     case 1:
-                    phrase+=" of Diamonds";
+                    phrase+=" ♦";
                     break;
                     
                     case 2:
-                    phrase+=" of Hearts ♥";
+                    phrase+=" ♥";
                     break;
 
                     case 3:
-                    phrase+=" of Spades";
+                    phrase+=" ♠";
                     break;
                 }
 
@@ -244,27 +245,33 @@ class Program
         int p1a=cards[1,pa];
         int p1b=cards[1,pb];
         int incRank=0;
+        int highPair=0;
         //player 1 ranking
                 
         if (p1a==cards[1,table[0]]) 
         {
             incRank++;
+            if (p1a>highPair){highPair=p1a;}
         }
         else if (p1a==cards[1,table[1]])
         {
             incRank++;
+            if (p1a>highPair){highPair=p1a;}
         } 
         else if (p1a==cards[1,table[2]])
         {
             incRank++;
+            if (p1a>highPair){highPair=p1a;}
         } 
         else if (p1a==cards[1,table[3]])
         {
             incRank++;
+            if (p1a>highPair){highPair=p1a;}
         } 
         else if (p1a==cards[1,table[4]])
         {
             incRank++;
+            if (p1a>highPair){highPair=p1a;}
         } 
         
     
@@ -272,35 +279,43 @@ class Program
             if (p1b==cards[1,table[0]]) 
         {
             incRank++;
+            if (p1b>highPair){highPair=p1b;}
         }
         else if (p1b==cards[1,table[1]])
         {
             incRank++;
+            if (p1b>highPair){highPair=p1b;}
         } 
         else if (p1b==cards[1,table[2]])
         {
             incRank++;
+            if (p1b>highPair){highPair=p1b;}
         } 
         else if (p1b==cards[1,table[3]])
         {
             incRank++;
+            if (p1b>highPair){highPair=p1b;}
         } 
         else if (p1b==cards[1,table[4]])
         {
             incRank++;
+            if (p1b>highPair){highPair=p1b;}
         }
         else if (p1b==p1a)
         {
             incRank++;
+            if (p1b>highPair){highPair=p1b;}
         }
         //setting the ranking to the player
         if (pname=="player1")
         {
             player1.rank=incRank;
+            player1.hPair=highPair;
         }
         else
         {
             player2.rank=incRank;
+            player2.hPair=highPair;
         }
 
         
@@ -311,17 +326,91 @@ class Program
         if (player1.rank>player2.rank)
         {
             //p1 wins
-            Console.WriteLine($"Player 1 wins!");
+            string adjust=player1.hPair.ToString();
+            switch(adjust)
+            {
+                case "11":
+                adjust="Jacks";
+                break;
+                case "12":
+                adjust="Queens";
+                break;
+                case "13":
+                adjust="Kings";
+                break;
+                case "14":
+                adjust="Aces";
+                break;
+            }
+            Console.WriteLine($"Player 1 wins with a pair of {adjust}");
         }
         else if (player1.rank==player2.rank)
         {
-            //draw
-            Console.WriteLine($"Draw!!!");
+            if(player1.hPair>player2.hPair)
+            {
+                string adjust=player1.hPair.ToString();
+            switch(adjust)
+            {
+                case "11":
+                adjust="Jacks";
+                break;
+                case "12":
+                adjust="Queens";
+                break;
+                case "13":
+                adjust="Kings";
+                break;
+                case "14":
+                adjust="Aces";
+                break;
+            }
+                Console.WriteLine($"Player 1 wins with a pair of {adjust}");
+            }
+            else if(player2.hPair>player1.hPair)
+            {
+                string adjust=player2.hPair.ToString();
+            switch(adjust)
+            {
+                case "11":
+                adjust="Jacks";
+                break;
+                case "12":
+                adjust="Queens";
+                break;
+                case "13":
+                adjust="Kings";
+                break;
+                case "14":
+                adjust="Aces";
+                break;
+            }
+                Console.WriteLine($"Player 2 wins with a pair of {adjust}!");
+            }
+            else if (player2.hPair==player2.hPair)
+            {
+                Console.WriteLine($"DRAW!");
+            }
         }
         else if (player1.rank<player2.rank)
         {
             //p2 wins
-            Console.WriteLine($"Player 2 wins!");
+            string adjust=player2.hPair.ToString();
+            switch(adjust)
+            {
+                case "11":
+                adjust="Jacks";
+                break;
+                case "12":
+                adjust="Queens";
+                break;
+                case "13":
+                adjust="Kings";
+                break;
+                case "14":
+                adjust="Aces";
+                break;
+            }
+            Console.WriteLine($"Player 2 wins with a pair of {adjust}");
         }
     }
     

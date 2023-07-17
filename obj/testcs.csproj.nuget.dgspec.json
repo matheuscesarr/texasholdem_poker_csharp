@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mathe\\OneDrive\\Documentos\\poker_cs\\testcs.csproj": {}
+    "C:\\Users\\mathe\\OneDrive\\Documentos\\poker_cs\\texasholdem_poker_csharp\\testcs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mathe\\OneDrive\\Documentos\\poker_cs\\testcs.csproj": {
+    "C:\\Users\\mathe\\OneDrive\\Documentos\\poker_cs\\texasholdem_poker_csharp\\testcs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mathe\\OneDrive\\Documentos\\poker_cs\\testcs.csproj",
+        "projectUniqueName": "C:\\Users\\mathe\\OneDrive\\Documentos\\poker_cs\\texasholdem_poker_csharp\\testcs.csproj",
         "projectName": "testcs",
-        "projectPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\poker_cs\\testcs.csproj",
+        "projectPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\poker_cs\\texasholdem_poker_csharp\\testcs.csproj",
         "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\poker_cs\\obj\\",
+        "outputPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\poker_cs\\texasholdem_poker_csharp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
