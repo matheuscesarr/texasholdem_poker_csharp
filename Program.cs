@@ -256,22 +256,22 @@ class Program
             incRank++;
             if (p1a>highPair){highPair=p1a;}
         }
-        else if (p1a==cards[1,table[1]])
+        if (p1a==cards[1,table[1]])
         {
             incRank++;
             if (p1a>highPair){highPair=p1a;}
         } 
-        else if (p1a==cards[1,table[2]])
+        if (p1a==cards[1,table[2]])
         {
             incRank++;
             if (p1a>highPair){highPair=p1a;}
         } 
-        else if (p1a==cards[1,table[3]])
+        if (p1a==cards[1,table[3]])
         {
             incRank++;
             if (p1a>highPair){highPair=p1a;}
         } 
-        else if (p1a==cards[1,table[4]])
+        if (p1a==cards[1,table[4]])
         {
             incRank++;
             if (p1a>highPair){highPair=p1a;}
@@ -284,30 +284,32 @@ class Program
             incRank++;
             if (p1b>highPair){highPair=p1b;}
         }
-        else if (p1b==cards[1,table[1]])
+        if (p1b==cards[1,table[1]])
         {
             incRank++;
             if (p1b>highPair){highPair=p1b;}
         } 
-        else if (p1b==cards[1,table[2]])
+        if (p1b==cards[1,table[2]])
         {
             incRank++;
             if (p1b>highPair){highPair=p1b;}
         } 
-        else if (p1b==cards[1,table[3]])
+        if (p1b==cards[1,table[3]])
         {
             incRank++;
             if (p1b>highPair){highPair=p1b;}
         } 
-        else if (p1b==cards[1,table[4]])
+        if (p1b==cards[1,table[4]])
         {
             incRank++;
             if (p1b>highPair){highPair=p1b;}
         }
-        else if (p1b==p1a)
+        if (p1b==p1a)
         {
             incRank++;
             if (p1b>highPair){highPair=p1b;}
+            //atention!
+            
         }
         //setting the ranking to the player
         if (pname=="player1")
@@ -389,7 +391,7 @@ class Program
             }
                 Console.WriteLine($"Player 2 wins with a pair of {adjust}!");
             }
-            else if (player2.hPair==player2.hPair)
+            else if (player2.hPair==player1.hPair)
             {
                 Console.WriteLine($"DRAW!");
             }
